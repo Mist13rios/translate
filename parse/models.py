@@ -8,9 +8,9 @@ VAL_LIST = (
 class DayHistory(models.Model):
 
     date = models.CharField(max_length=64, blank=False)
-    price = models.DecimalField(blank=False, max_digits=5, decimal_places=1)
-    open = models.DecimalField(blank=False, max_digits=5, decimal_places=1)
-    high = models.DecimalField(blank=False, max_digits=5, decimal_places=1)
-    low = models.DecimalField(blank=False, max_digits=5, decimal_places=1)
-    change = models.DecimalField(blank=False, max_digits=4, decimal_places=2)
+    price = models.CharField(max_length=64, blank=False)
+    open = models.CharField(max_length=64, blank=False)
+    high = models.CharField(max_length=64, blank=False)
+    low = models.CharField(max_length=64, blank=False)
+    change = models.CharField(max_length=64, blank=False)
     val = models.CharField(choices=VAL_LIST, max_length=64, blank=True, null=True, default='dollar')
