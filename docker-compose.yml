@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  app_parse:
+    build:
+      context: ./
+      dockerfile: services/app/Dockerfile
+      args:
+        - BUILD_ENV=dev
+        - REQUIREMENTS=base
+    image: parse_app:latest
+    container_name: parse
+    command: ${SYSTEM_UP_COMMAND}
+    restart: "no"
+    env_file: .env
+    volumes:
+      - .:/var/www/src:cached
+      # mount all code except a few folders:
+      - ./static_root:/var/www/source/static
+      - ./media_root:/var/www/source/media
+      - ./services/app/docker-entrypoint.sh:/docker-entrypoint.sh
+    ports:
+      - 8000:8000
+    networks:
+      - backend
+
+
+networks:
+  backend:
+    driver: bridge

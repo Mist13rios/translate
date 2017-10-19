@@ -1,0 +1,19 @@
+Django==1.11.5
+psycopg2
+Pillow
+pycurl
+grab
+#gunicorn
+#django-rosetta
+#django-modeltranslation
+#scipy
+#nltk
+#pandas
+#numpy
+#Accred packages
+xlwt
+xlrd
+#weasyprint
+#pdfkit
+#djangorestframework
+#django-solo

@@ -1,0 +1,5 @@
+.git
+configs/
+
+.idea
+docker-compose*.yml
